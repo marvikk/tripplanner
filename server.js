@@ -1,11 +1,13 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var { ObjectID } = require("mongodb");
+var cors = require("cors");
 
 var { mongoose } = require("./db/mongoose");
 var { Destination } = require("./models/destination");
 
 var app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
